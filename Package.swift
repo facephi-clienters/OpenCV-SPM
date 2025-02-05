@@ -17,10 +17,12 @@ let package = Package(
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
+        .target(
+            name: "OpenCV-SPM",
+            dependencies: ["opencv2"]
+        ),
         .binaryTarget(name: "opencv2",
                       url: "https://github.com/facephi-clienters/OpenCV-SPM/releases/download/\(version)/opencv2.xcframework.zip",
                       checksum: checksum),
-        .target(
-            name: "OpenCV-SPM"),
     ]
 )
